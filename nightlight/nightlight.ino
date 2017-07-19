@@ -121,9 +121,9 @@ void loop () {
   // Only change led outputs if they've changed.
   if ( ( previous_output_red != output_red ) || ( previous_output_yellow != output_yellow ) || ( previous_output_green != output_green ) ) {
     
-    digitalWrite(LED_RED, output_red);
-    digitalWrite(LED_YELLOW, output_yellow);
-    digitalWrite(LED_GREEN, output_green);
+    digitalWrite( LED_RED, 	output_red	);
+    digitalWrite( LED_YELLOW,	output_yellow	);
+    digitalWrite( LED_GREEN, 	output_green	);
 
     // Save state.
     previous_output_red     = output_red;
