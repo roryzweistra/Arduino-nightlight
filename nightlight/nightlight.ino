@@ -97,15 +97,20 @@ void loop () {
     output_yellow = LOW;
     output_green  = LOW;
   }
-  else if ( ( now.hour() == 6 ) && ( now.minute() <= 55 ) ) {
-    output_red    = HIGH;
-    output_yellow = LOW;
-    output_green  = LOW;
-  }
-  else if ( ( now.hour() == 6 ) && ( now.minute() >= 55 ) ) {
-    output_red    = LOW;
-    output_yellow = HIGH;
-    output_green  = LOW;
+  else if ( now.hour() == 6 ) {
+    // Green always LOW for this hour.
+    output_green = LOW;
+    
+    // Determine red & yellow based on minute.
+    if ( now.minute() <= 55 ) {
+      output_red    = HIGH;
+      output_yellow = LOW;
+    }
+    else {
+      output_red    = LOW;
+      output_yellow = HIGH;
+    }
+    
   }
   else if ( now.hour() == 7 ) {
     output_red    = LOW;
